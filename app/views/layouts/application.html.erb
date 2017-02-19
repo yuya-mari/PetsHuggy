@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PetsHuggy</title>
+    <%= csrf_meta_tags %>
+    
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+    
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+    
+    
+<!--    flashにメッセージがあるとき　-->
+    <% unless flash.empty? %>
+      <script>
+        <% flash.each do |f| %>   //flashの中に入っているものをそれぞれfに書き出す.たくさんあるかもしれんから
+        
+        /*flash[:notice] = "signed in successfully.";
+        f[0]= :notice,f[1] = "Signed in successfully."*/　// flash[0]はタイプ、[1]はメッセージ；
+        
+        <% type = f[0].to_s.gsub('alert','error').gsub('notice','info') %>// 'alert'を'error'に置き換える．flashの分け方を、toastrの分け方に変える
+        toastr['<%= type %>']('<%= f[1] %>');
+        <% end %>
+    </script>
+    <% end %>    
+    
+  </body>
+</html>
