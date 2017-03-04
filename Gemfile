@@ -26,6 +26,7 @@ gem "paperclip", "~> 5.0.0" #ファイルをアップロードするやつ
 gem 'dropzonejs-rails' #ドラッグア＆ドロップでファイルアップロードするやつ
 gem "figaro", "~> 1.1.0" #いろんなIDとかGIT HUBアップロードしたときに隠すやつ
 gem 'aws-sdk', '~> 2.3' #awsの
+gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt' #cannot load such file -- bcrypt_extのエラーが出たから入れた
 
 
 group :production do
