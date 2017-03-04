@@ -25,6 +25,8 @@ gem 'omniauth-facebook'
 gem "paperclip", "~> 5.0.0" #ファイルをアップロードするやつ
 gem 'dropzonejs-rails' #ドラッグア＆ドロップでファイルアップロードするやつ
 gem "figaro", "~> 1.1.0" #いろんなIDとかGIT HUBアップロードしたときに隠すやつ
+gem 'aws-sdk', '~> 2.3' #awsの
+
 
 group :production do
   gem 'pg'
